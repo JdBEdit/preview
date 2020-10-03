@@ -1,0 +1,26 @@
+body:not(.fa),
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
+
+.max {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html.preview,
+html.preview body,
+html.preview .app,
+html.preview pre,
+html.preview code.hljs {
+  min-height: 100%;
+}
+
+html.preview-text,
+html.preview-text body,
+html.preview-text .app,
+html.preview-text pre,
+html.preview-text code.hljs {
+  height: 100%;
+}

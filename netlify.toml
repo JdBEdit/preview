@@ -1,0 +1,33 @@
+###########################
+# DOMAINS REDIRECTIONS
+###########################
+[[redirects]]
+  from = "https://jdbedit-preview.netlify.com/*"
+  to = "https://preview.codewith.wetrafa.xyz/:splat"
+  status = 301
+  force = true
+
+###########################
+# APP REDIRECTIONS
+###########################
+[[redirects]]
+  from = "/file/*"
+  to = "/?id=:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/edit"
+  query = {id = ":id"}
+  to = "https://code.wetrafa.xyz/?gistId=:id&from=preview"
+  status = 301
+  force = true
+
+###########################
+# OTHER REDIRECTIONS
+###########################
+[[redirects]]
+  from = "/author"
+  to = "https://w.we-rl.xyz/br-cd"
+  status = 301
+  force = true
