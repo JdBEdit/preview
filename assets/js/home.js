@@ -20,6 +20,8 @@ $(document).ready(function(){
       return str.split("/")[4];
     } else if (str.indexOf("//rawgit.com/") > -1) {
       return str.split("/")[4];
+    } else if (str.indexOf("//code." + wetrafa_domaine + "/preview/") > -1) {
+      return str.split("/")[4];
     } else if (str.indexOf("//code." + wetrafa_domaine + "/") > -1) {
       return jdb.getUrlParam("gistId", str) || jdb.getUrlParam("template", str);
     } else if (str.indexOf("//codewith." + wetrafa_domaine + "/") > -1) {
@@ -113,7 +115,7 @@ $(document).ready(function(){
     setUserChoicesInUrl();
   });
 
-  $("#update-id-input").on("keypress", function (event) {
+  $("#update-id-input").on("keyup keydown", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
       setUserChoicesInUrl();
