@@ -125,8 +125,7 @@ $(document).ready(function(){
   });
 
   $("#setting-render-markdown").change(function(){
-    var render_md = $(this).is(":checked");
-    if (render_md) {
+    if ($(this).is(":checked")) {
       $("#setting-style-markdown").attr("disabled", false);
       $("#setting-theme").val("").attr("disabled", true);
     } else {
