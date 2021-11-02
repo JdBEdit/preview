@@ -10,15 +10,14 @@ $(document).ready(function(){
    * @returns {string} Gist id
    */
   function getGistId (str) {
+    str = str.trim();
     if (!jdb.isUrl(str)) {
       return str;
     } else if (str.indexOf("//gist.github.com/") > -1) {
       return str.split("/").pop().split("?")[0];
-    } else if (str.indexOf("//gist.githubusercontent.com/") > -1) {
-      return str.split("/")[4];
-    } else if (str.indexOf("//cdn.rawgit.com/") > -1) {
-      return str.split("/")[4];
-    } else if (str.indexOf("//rawgit.com/") > -1) {
+    } else if (str.indexOf("//gist.githubusercontent.com/") > -1 ||
+      str.indexOf("//cdn.rawgit.com/") > -1 || str.indexOf("//rawgit.com/") > -1
+    ) {
       return str.split("/")[4];
     } else if (str.indexOf("//code." + wetrafa_domaine + "/preview/") > -1) {
       return str.split("/")[4];
@@ -31,7 +30,11 @@ $(document).ready(function(){
     } else if (str.indexOf("//jdbedit.netlify.com/") > -1) {
       return jdb.getUrlParam("gistId", str);
     } else if (str.indexOf("//preview.codewith." + wetrafa_domaine + "/") > -1) {
-      return jdb.getUrlParam("id", str);
+      if (str.indexOf("/file/") > -1) {
+        return str.split("/")[4];
+      } else if (str.indexOf("id=") > -1) {
+        return jdb.getUrlParam("id", str);
+      }
     }
   }
 
