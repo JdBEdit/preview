@@ -160,6 +160,7 @@ $(document).ready(function(){
 
   /**
    * Show code as text in a <pre> element.
+   * @private
    * @param {string} content The code
    * @param {string} lang Language name
    */
