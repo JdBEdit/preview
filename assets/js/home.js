@@ -1,4 +1,4 @@
-/*! Copyright 2017 - 2020 JdBEdt. All rights reserved. */
+/*! Copyright 2017 - 2021 JdBEdit. All rights reserved. */
 
 $(document).ready(function(){
   var wetrafa_domaine = "wetrafa.xyz";
