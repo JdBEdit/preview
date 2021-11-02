@@ -12,28 +12,34 @@ $(document).ready(function(){
    * @returns {void}
    */
   function loadThemeStyle (callback) {
-    var hljs_version = "10.2.0"; // 9.14.2
+    var hljs_version = "11.3.1"; // 10.2.0
     var hljs_name = "highlight";
-    var hljs_user_theme = jdb.getUrlParam("theme");
+    var hljs_user_theme = (jdb.getUrlParam("theme") || "").toLowerCase();
     var path = "//cdnjs.cloudflare.com/ajax/libs/" + hljs_name + ".js/";
-    var hljs_all_themes = [
-      "atom-one-dark", "atom-one-light", "agate",
-      "androidstudio", "color-brewer", "default",
-      "dracula", "github", "mono-blue", "monokai-sublime",
-      "railscasts", "rainbow", "solarized-dark",
-      "solarized-light", "tomorrow", "vs", "zenburn"
-    ];
-    var hljs_all_themes_length = hljs_all_themes.length, i;
+    var hljs_themes = hljs_all_themes.dark.concat(hljs_all_themes.light);
+    var hljs_all_themes_length = hljs_themes.length;
 
     if (hljs_user_theme !== null) {
-      for (i = 0; i < hljs_all_themes_length; i++) {
-        if (hljs_user_theme === hljs_all_themes[i]) {
-          hljs_user_theme = hljs_all_themes[i].toLowerCase();
-          break;
+      let i, itheme, validTheme = false;
+      for (i = 0; !validTheme && i < hljs_all_themes_length; i++) {
+        itheme = hljs_themes[i].replace(/\s/g, "-").toLowerCase();
+        if (hljs_user_theme === itheme) {
+          hljs_user_theme = itheme;
+          validTheme = true;
         }
       }
+      if (validTheme) {
+        // rewrite file name by prepending the parent folder name.
+        for (let i = 0; i < hljs_all_themes.base16.length; i++) {
+          if (hljs_user_theme === hljs_all_themes.base16[i]) {
+            hljs_user_theme = `base16/${hljs_user_theme}`;
+          }
+        }
+      } else {
+        hljs_user_theme = "github-dark";
+      }
     } else {
-      hljs_user_theme = "github";
+      hljs_user_theme = "github-dark";
     }
 
     $("<link>", {
@@ -187,9 +193,9 @@ $(document).ready(function(){
         );
 
       try {
-        hljs.initHighlighting();
+        hljs.highlightAll();
       } catch (e) {
-        hljs.initHighlightingOnLoad();
+        hljs.highlightAuto();
       }
     });
   }

@@ -108,6 +108,25 @@ $(document).ready(function(){
     });
   }
 
+
+
+  let themeOptGroup = `<optgroup id="dark-theme" label="Thèmes sombres">`;
+  themeOptGroup += `<option value="" selected>Sélectionner un thème</option>`;
+  for (let i = 0; i < hljs_all_themes.dark.length; i++) {
+    themeOptGroup += `<option value="${hljs_all_themes.dark[i].replace(/\s/g, "-").toLowerCase()}">
+      ${hljs_all_themes.dark[i]}</option>`;
+  }
+  themeOptGroup += `</optgroup>`;
+  $("#setting-theme").append(themeOptGroup);
+
+  themeOptGroup = `<optgroup id="light-theme" label="Thèmes clairs">`;
+  for (let i = 0; i < hljs_all_themes.light.length; i++) {
+    themeOptGroup += `<option value="${hljs_all_themes.light[i].replace(/\s/g, "-").toLowerCase()}">
+      ${hljs_all_themes.light[i]}</option>`;
+  }
+  themeOptGroup += `</optgroup>`;
+  $("#setting-theme").append(themeOptGroup);
+
   $("#update-id-btn").click(function(){
     $(this).removeClass("jdb-border-bottom").addClass("jdb-border-top").delay(234).queue(function(){
       $(this).removeClass("jdb-border-top").addClass("jdb-border-bottom").dequeue();
