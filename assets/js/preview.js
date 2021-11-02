@@ -75,24 +75,10 @@ $(document).ready(function(){
       var data = datas.files[Object.keys(datas.files)[0]];
       var lang = data.language.toLowerCase();
 
-      $("head").append(
-        $("<meta>", {
-          content: data.description,
-          name: "description"
-        })
-      ).append(
-        $("<meta>", {
-          content: data.description,
-          name: "twitter:description"})
-      ).append(
-        $("<meta>", {
-          content: data.description,
-          itemprop: "description"})
-      ).append(
-        $("<meta>", {
-          content: data.description,
-          property: "og:description"
-        })
+      $("head").append( $("<meta>", { content: data.description, name: "description" })
+      ).append( $("<meta>", { content: data.description, name: "twitter:description"})
+      ).append( $("<meta>", { content: data.description, itemprop: "description"})
+      ).append( $("<meta>", { content: data.description, property: "og:description" })
       ).find("title").text(data.filename.split(".").shift() + " - JdBEdit Preview");
 
       if (lang === "html") {
