@@ -1,9 +1,9 @@
 /*! Copyright 2017 - 2021 JdBEdit. All rights reserved. */
 
 $(document).ready(function(){
-  var gistId = jdb.getUrlParam("id");
+  const gistId = jdb.getUrlParam("id");
   // If no render param in URL, render_code = true by default.
-  var renderCode = jdb.getUrlParam("render") || true;
+  const renderCode = jdb.getUrlParam("render") || true;
 
   /**
    * Load css file for highlight.js.
@@ -12,16 +12,15 @@ $(document).ready(function(){
    * @returns {void}
    */
   function loadThemeStyle (callback) {
-    var hljs_version = "11.3.1"; // 10.2.0
-    var hljs_name = "highlight";
-    var hljs_user_theme = (jdb.getUrlParam("theme") || "").toLowerCase();
-    var path = "//cdnjs.cloudflare.com/ajax/libs/" + hljs_name + ".js/";
-    var hljs_themes = hljs_all_themes.dark.concat(hljs_all_themes.light);
-    var hljs_all_themes_length = hljs_themes.length;
+    const hljs_version = "11.3.1"; // 10.2.0
+    const hljs_name = "highlight";
+    let hljs_user_theme = (jdb.getUrlParam("theme") || "").toLowerCase();
+    const path = "//cdnjs.cloudflare.com/ajax/libs/" + hljs_name + ".js/";
+    let hljs_themes = hljs_all_themes.dark.concat(hljs_all_themes.light);
 
     if (hljs_user_theme !== null) {
       let i, itheme, validTheme = false;
-      for (i = 0; !validTheme && i < hljs_all_themes_length; i++) {
+      for (i = 0; !validTheme && i < hljs_themes.length; i++) {
         itheme = hljs_themes[i].replace(/\s/g, "-").toLowerCase();
         if (hljs_user_theme === itheme) {
           hljs_user_theme = itheme;
@@ -47,7 +46,7 @@ $(document).ready(function(){
       href: path + hljs_version + "/styles/" + hljs_user_theme + ".min.css"
     }).appendTo("head");
 
-    $.getScript(path + hljs_version + "/" + hljs_name + ".min.js").done(function(){
+    $.getScript(path + hljs_version + "/" + hljs_name + ".min.js").done(() => {
       if (callback) callback();
     });
   }
@@ -62,7 +61,7 @@ $(document).ready(function(){
       url: "https:\/\/api.github.com\/gists\/" + gistId,
       type: "GET",
       statusCode: {
-        404: function() {
+        404: () => {
           $(".app").addClass("jdb-unselectable").append(
             $("<style>", {
               type: "text/css",
@@ -71,9 +70,9 @@ $(document).ready(function(){
           ).append("<a class=\"home\" href=\"/home?ref=404\"><button><span style=\"color:green\">&gt;<\/span> Accueil<\/button><\/a><!-- See the license at: https://codepen.io/conmarap/details/mVMvVv/#details-tab-license --><div class=\"code-area jdb-monospace\"><span style=\"color: #777;font-style:italic;\">\n\t// 404 - File not found.<\/span>\n\t<span>\n\t<span style=\"color:#d65562;\">\n\t\tif <\/span>(<span style=\"color:#4ca8ef;\">!<\/span><span style=\"font-style: italic;color:#bdbdbd;\">found<\/span>) {<\/span><span><span style=\"padding-left: 15px;color:#2796ec\"><i style=\"width: 10px;display:inline-block\"><\/i>throw <\/span><span>(<span style=\"color: #a6a61f\">'¯\\_(ツ)_/¯'<\/span>);<\/span>\n<span style=\"display:block\">}<\/span><\/span><\/div>");
         }
       }
-    }).done(function(datas) {
-      var data = datas.files[Object.keys(datas.files)[0]];
-      var lang = data.language.toLowerCase();
+    }).done(datas => {
+      let data = datas.files[Object.keys(datas.files)[0]];
+      let lang = data.language.toLowerCase();
 
       $("head").append( $("<meta>", { content: data.description, name: "description" })
       ).append( $("<meta>", { content: data.description, name: "twitter:description"})
@@ -85,8 +84,8 @@ $(document).ready(function(){
         if (renderCode === "false") renderRawPreview(data.content, lang);
         else renderPreview(data.raw_url, lang);
       } else if (lang === "markdown" && jdb.getUrlParam("exec") === "true") {
-        $.getScript("/assets/js/marked.js").done(function(){
-          var addStyleToMarkDown = jdb.getUrlParam("style_md");
+        $.getScript("/assets/js/marked.js").done(() => {
+          let addStyleToMarkDown = jdb.getUrlParam("style_md");
           $(".app").addClass(["max", "preview-markdown"]).html(marked(data.content));
           if (addStyleToMarkDown !== null && addStyleToMarkDown === "true") {
             $("head").append(
@@ -112,7 +111,7 @@ $(document).ready(function(){
    */
   function renderPreview (url, lang, callback) {
     if (lang === "html" && renderCode === true) {
-      var htmlText, iframe = $("<iframe>", {
+      let htmlText, iframe = $("<iframe>", {
         id: "iframeResult",
         name: "iframeResult",
         src: /* !!url ? url : */ "about:blank",
@@ -133,12 +132,12 @@ $(document).ready(function(){
         bottom: 0, top: 0,
       }).append(iframe);
 
-      var ifrw = iframe.contents();
+      let ifrw = iframe.contents();
 
-      $.get(url).done(function(data) {
+      $.get(url).done(data => {
         htmlText = data;
-        var ifr = document.getElementById("iframeResult");
-        var ifr_ = (ifr.contentWindow) ? ifr.contentWindow : (
+        let ifr = document.getElementById("iframeResult");
+        let ifr_ = (ifr.contentWindow) ? ifr.contentWindow : (
           ifr.contentDocument.document) ?
           ifr.contentDocument.document : ifr.contentDocument;
 
@@ -165,7 +164,7 @@ $(document).ready(function(){
    * @param {string} lang Language name
    */
   function renderRawPreview (content, lang) {
-    renderPreview("", lang, function() {
+    renderPreview("", lang, () => {
       content = content.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       $("html").addClass("preview-text").removeClass("preview")
         .find("body").css("overflow", "auto").find(".app").html(

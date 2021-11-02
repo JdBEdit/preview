@@ -1,7 +1,7 @@
 /*! Copyright 2017 - 2021 JdBEdit. All rights reserved. */
 
 $(document).ready(function(){
-  var wetrafa_domaine = "wetrafa.xyz";
+  const wetrafa_domaine = "wetrafa.xyz";
 
   /**
    * Extract gist id from the given URL.
@@ -44,8 +44,8 @@ $(document).ready(function(){
    * @returns {void}
    */
   function setUserChoicesInUrl() {
-    var $input = $("#update-id-input");
-    var val = $input.val();
+    let $input = $("#update-id-input");
+    let val = $input.val();
 
     // If no file ID or URL provided.
     if (val === "") {
@@ -56,12 +56,12 @@ $(document).ready(function(){
       return;
     }
 
-    var gistId = getGistId(val);
-    var style_md = $("#setting-style-markdown").prop("checked");
-    var render_md = $("#setting-render-markdown").prop("checked");
-    var render_all = $("#setting-preview-type").val();
-    var theme = $("#setting-theme").val();
-    var newURL_path = "/?id=" + gistId +
+    const gistId = getGistId(val);
+    const style_md = $("#setting-style-markdown").prop("checked");
+    const render_md = $("#setting-render-markdown").prop("checked");
+    const render_all = $("#setting-preview-type").val();
+    const theme = $("#setting-theme").val();
+    const newURL_path = "/?id=" + gistId +
       (style_md ? "&style_md=true" : "") +
       (render_md ? "&exec=true" : "") +
       (render_all === "render" ? "" : "&render=false") +
@@ -110,8 +110,6 @@ $(document).ready(function(){
       }, 1000);
     });
   }
-
-
 
   let themeOptGroup = `<optgroup id="dark-theme" label="Thèmes sombres">`;
   themeOptGroup += `<option value="" selected>Sélectionner un thème</option>`;
