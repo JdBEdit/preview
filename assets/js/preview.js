@@ -78,6 +78,7 @@ $(document).ready(function(){
       ).append( $("<meta>", { content: data.description, name: "twitter:description"})
       ).append( $("<meta>", { content: data.description, itemprop: "description"})
       ).append( $("<meta>", { content: data.description, property: "og:description" })
+      ).append( $("<meta>", { content: window.location.href, property: "og:url" })
       ).find("title").text(data.filename.split(".").shift() + " - JdBEdit Preview");
 
       if (lang === "html") {
