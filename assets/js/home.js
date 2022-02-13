@@ -35,6 +35,8 @@ $(document).ready(function(){
       } else if (str.indexOf("id=") > -1) {
         return jdb.getUrlParam("id", str);
       }
+    } else {
+      return "gist_id_not_found";
     }
   }
 
