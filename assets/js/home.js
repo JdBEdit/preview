@@ -135,7 +135,7 @@ $(document).ready(function(){
     setUserChoicesInUrl();
   });
 
-  $("#update-id-input").on("keyup keydown", function (event) {
+  $("#update-id-input").on("keyup keydown", (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       setUserChoicesInUrl();
