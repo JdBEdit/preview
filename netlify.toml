@@ -28,6 +28,6 @@
 ###########################
 [[redirects]]
   from = "/author"
-  to = "https://w.we-rl.xyz/br-cd"
+  to = "https://w.we-rl.xyz/jdb"
   status = 301
   force = true
