@@ -13,32 +13,33 @@ $(document).ready(function(){
   function getGistId (str) {
     str = str.trim();
     if (!jdb.isUrl(str)) {
-      return str;
+      return str; // Not a URL. Considered as a gist id.
     } else if (str.indexOf("//gist.github.com/") > -1) {
-      return str.split("/").pop().split("?")[0];
+      str = str.split("/").pop().split("?")[0];
     } else if (str.indexOf("//gist.githubusercontent.com/") > -1 ||
       str.indexOf("//cdn.rawgit.com/") > -1 || str.indexOf("//rawgit.com/") > -1
+      //! Remove rawgit support on the end of 2022.
     ) {
-      return str.split("/")[4];
+      str = str.split("/")[4];
     } else if (str.indexOf("//code." + wetrafa_domaine + "/preview/") > -1) {
-      return str.split("/")[4];
+      str = str.split("/")[4];
     } else if (str.indexOf("//code." + wetrafa_domaine + "/") > -1) {
-      return jdb.getUrlParam("gistId", str) || jdb.getUrlParam("template", str);
-    } else if (str.indexOf("//codewith." + wetrafa_domaine + "/") > -1) {
-      return jdb.getUrlParam("gistId", str);
-    } else if (str.indexOf("//www.code." + wetrafa_domaine + "/") > -1) {
-      return jdb.getUrlParam("gistId", str);
-    } else if (str.indexOf("//jdbedit.netlify.com/") > -1) {
-      return jdb.getUrlParam("gistId", str);
+      str = jdb.getUrlParam("gistId", str) || jdb.getUrlParam("template", str);
+    } else if (
+      str.indexOf("//codewith." + wetrafa_domaine + "/") > -1 ||
+      str.indexOf("//www.code." + wetrafa_domaine + "/") > -1 ||
+      str.indexOf("//jdbedit.netlify.com/") > -1
+    ) {
+      str = jdb.getUrlParam("gistId", str) || jdb.getUrlParam("template", str);
     } else if (str.indexOf("//preview.codewith." + wetrafa_domaine + "/") > -1) {
       if (str.indexOf("/file/") > -1) {
-        return str.split("/")[4];
+        str = str.split("/")[4];
       } else if (str.indexOf("id=") > -1) {
-        return jdb.getUrlParam("id", str);
-      }
-    } else {
-      return "gist_id_not_found";
-    }
+        str = jdb.getUrlParam("id", str);
+      } else {  str = ""; }
+    } else { str = ""; }
+
+    return (str && str.length > 0) ? str : -1;
   }
 
   /**
@@ -70,7 +71,14 @@ $(document).ready(function(){
       (render_all === "render" ? "" : "&render=false") +
       (theme !== "" ? ("&theme=" + theme) : "");
 
-    window.open(newURL_path, "_blank");
+    if (gistId < 0) {
+      showError();
+    } else {
+      // All params seem to be ok.
+      window.open(newURL_path, "_blank");
+    }
+  }
+
   /**
    * Show the given error message.
    * @private
