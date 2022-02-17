@@ -2,6 +2,7 @@
 
 $(document).ready(function(){
   const wetrafa_domaine = "wetrafa.xyz";
+  let errorTimeout;
 
   /**
    * Extract gist id from the given URL.
@@ -51,7 +52,7 @@ $(document).ready(function(){
 
     // If no file ID or URL provided.
     if (val === "") {
-      $("#jdb-error-msg").text("Veuillez fournir une ID de fichier.").slideDown();
+      showError();
       $input.addClass("jdb-border-red").delay(1e3).queue(function(){
         $(this).removeClass("jdb-border-red").dequeue();
       });
@@ -70,6 +71,19 @@ $(document).ready(function(){
       (theme !== "" ? ("&theme=" + theme) : "");
 
     window.open(newURL_path, "_blank");
+  /**
+   * Show the given error message.
+   * @private
+   * @param {string} [msg] Error message
+   * @returns {void}
+   */
+  function showError(msg) {
+    if (!msg) msg = "Veuillez fournir un ID de fichier valide.";
+    $("#jdb-error-msg").text(msg).slideDown();
+    errorTimeout = setTimeout(() => {
+      clearTimeout(errorTimeout);
+      errorTimeout = null;
+    }, 5000);
   }
 
   /**
@@ -137,13 +151,15 @@ $(document).ready(function(){
     setUserChoicesInUrl();
   });
 
-  $("#update-id-input").on("keyup keydown", (event) => {
+  $("#update-id-input").on("keydown", event => {
     if (event.keyCode === 13) {
       event.preventDefault();
       setUserChoicesInUrl();
     }
 
-    if ($("#jdb-error-msg").is(":visible")) $("#jdb-error-msg").slideUp();
+    if (!errorTimeout && $("#jdb-error-msg").is(":visible")) {
+      $("#jdb-error-msg").slideUp();
+    }
   });
 
   $("#setting-render-markdown").change(function(){
