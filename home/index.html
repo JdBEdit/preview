@@ -116,35 +116,26 @@
       <div class="jdb-text-red jdb-padding-small jdb-bold jdb-monospace" id="jdb-error-msg" style="display:none"></div>
       <details class="jdb-section" id="advanced-settings" open>
         <summary class="jdb-focusable jdb-round jdb-pointer jdb-padding-left">Paramètres avancés</summary>
-        <div id="render-markdown-container" class="jdb-margin-top jdb-light-gray jdb-round jdb-padding-sm">
-          <ul class="jdb-ul">
-            <li>
-              <label class="jdb-show-block jdb-margin-8" for="setting-preview-type">Type d'aperçu pour le HTML</label>
-              <select class="jdb-input jdb-focusable jdb-border jdb-round" name="setting-preview-type" id="setting-preview-type">
-                <option value="render" selected>Code rendu</option>
-                <option value="plain">Texte brut</option>
-              </select>
-            </li>
-            <li class="jdb-padding-bottom">
-              <input class="jdb-check jdb-focusable" type="checkbox" name="setting-render-markdown" id="setting-render-markdown">
-              <label class="jdb-margin-left" for="setting-render-markdown">
-                Faire le rendu Markdown en HTML <i class="jdb-text-gray">(si le fichier est en Markdown)</i>
-              </label>
-            </li>
-            <li class="jdb-padding-bottom">
-              <input class="jdb-check jdb-focusable" type="checkbox" name="setting-style-markdown" id="setting-style-markdown" disabled>
-              <label class="jdb-margin-left" for="setting-style-markdown">
-                Ajouter du style au markdown
-              </label>
-            </li>
-            <li>
-              <label class="jdb-show-block jdb-margin-8" for="setting-theme">
-                Thème du code <i class="jdb-text-gray">(si le fichier n'est pas en HTML ou en Markdown rendu)</i>
-              </label>
-              <select class="jdb-input jdb-focusable jdb-border jdb-round" name="setting-theme" id="setting-theme">
-              </select>
-            </li>
-          </ul>
+        <div id="render-markdown-container" class="jdb-margin-top jdb-light-gray jdb-round jdb-padding">
+          <div class="jdb-margin-8">
+            <label class="jdb-show-block jdb-margin-8" for="setting-preview-type">Type d'aperçu</label>
+            <select class="jdb-select jdb-focusable jdb-border jdb-round" name="setting-preview-type" id="setting-preview-type">
+              <option value="render" selected>Code rendu (HTML, SVG et Markdown uniquement)</option>
+              <option value="plain">Texte brut</option>
+            </select>
+            <div class="jdb-panel jdb-dark-gray jdb-round-md">
+              <p><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
+                Le markdown est rendu HTML et stylé par défaut. Pour garder le code en markdown, sélectionnez le type d'aperçu "Texte brut" ci-dessus.</p>
+              </p>
+            </div>
+          </div>
+          <div class="jdb-margin-8">
+            <label class="jdb-show-block jdb-margin-8" for="setting-theme">
+              Thème du code <i class="jdb-text-gray">(s'applique si le fichier n'est pas en HTML)</i>
+            </label>
+            <select class="jdb-select jdb-focusable jdb-border jdb-round" name="setting-theme" id="setting-theme">
+            </select>
+          </div>
         </div>
       </details>
     </div>

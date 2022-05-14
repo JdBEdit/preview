@@ -1,6 +1,194 @@
+:root {
+  --accent-color: hsl(220, 100%, 60%);
+  --ne-global-background: hsl(220, 43%, 99%);
+  --ne-global-foreground: hsl(0, 0%, 0%);
+  --ne-body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --ne-root-font-size: 100%;
+  --ne-body-font-size: 16px;
+  --ne-vertical-leading: 1.5em;
+  --ne-selection-foreground: hsl(0, 0%, 100%);
+  --ne-global-box-sizing: border-box;
+  --ne-selection-background: hsl(233, 64%, 72%);
+  --ne-basic-line-height: 1.5;
+  --ne-headings-scale: 1.15;
+  --ne-headings-line-height: 1.1;
+  --ne-quote-font-size: 16px;
+  --ne-cite-foreground: hsl(220, 100%, 60%);
+  --ne-cite-font-size: 1rem;
+  --ne-cite-start-sign: '—';
+  --ne-links-foreground: hsl(225, 89%, 54%);
+  --ne-links-active-foreground: hsl(233, 64%, 52%);
+  --ne-del-foreground: hsl(337, 74%, 31%);
+  --ne-del-background: hsl(0, 100%, 94%);
+  --ne-ins-foreground: hsl(161, 98%, 18%);
+  --ne-ins-background: hsl(138, 100%, 88%);
+  --ne-kbd-color: hsl(233, 34%, 96%);
+  --ne-kbd-border-radius: 4px;
+  --ne-mark-foreground: hsl(20, 100%, 26%);
+  --ne-mark-background: hsl(57, 100%, 60%);
+  --ne-inline-code-border-radius: 2px;
+  --ne-inline-code-background: hsl(220, 10%, 95%);
+  --ne-button-border: 0;
+  --ne-button-hover-border: 0;
+  --ne-button-active-border: 0;
+  --ne-button-disabled-border: 0;
+  --ne-button-background: hsl(220, 100%, 60%);
+  --ne-button-hover-background: hsl(220, 100%, 55%);
+  --ne-button-active-background: hsl(220, 100%, 45%);
+  --ne-button-disabled-background: hsl(235, 100%, 98%);
+  --ne-button-foreground: hsl(0, 0%, 100%);
+  --ne-button-hover-foreground: hsl(0, 0%, 100%);
+  --ne-button-active-foreground: hsl(0, 0%, 100%);
+  --ne-button-disabled-foreground: hsl(232, 36%, 87%);
+  --ne-button-icon-size: 1em;
+  --ne-button-icon-margin: 1em;
+  --ne-button-border-radius: 10px;
+  --ne-button-font-size: inherit;
+  --ne-button-y-padding: 0.7em;
+  --ne-button-x-padding: 1em;
+  --ne-button-line-height: 1;
+  --ne-button-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  --ne-checkradio-border: none;
+  --ne-checkradio-background: hsl(233, 34%, 92%);
+  --ne-checkradio-color: hsl(220, 100%, 60%);
+  --ne-checkradio-tick-color: hsl(0, 0%, 100%);
+  --ne-checkradio-size: 22px;
+  --ne-checkradio-border-radius: 6px;
+  --ne-checkradio-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  --ne-code-border: 1px solid hsl(0, 0%, 89%);
+  --ne-code-background: transparent;
+  --ne-code-foreground: hsl(220, 10%, 50%);
+  --ne-code-font-size: 0.875rem;
+  --ne-code-tab-size: 1.5rem;
+  --ne-code-font-family: 'SF Mono', Monaco, Inconsolata, 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  --ne-code-border-radius: 5px;
+  --ne-code-y-padding: 0; /* 1.25rem */
+  --ne-code-x-padding: 0; /* 1.5rem */
+  --ne-color-border: 0;
+  --ne-color-border-radius: 5px;
+  --ne-color-width: 48px;
+  --ne-color-height: 24px;
+  --ne-details-border: 2px solid hsl(213, 26%, 92%);
+  --ne-details-separator-border: 0;
+  --ne-details-background: hsl(0, 0%, 100%);
+  --ne-details-overflow: auto;
+  --ne-details-summary-background: hsl(0, 0%, 100%);
+  --ne-details-summary-foreground: inherit;
+  --ne-details-summary-font-size: initial;
+  --ne-details-summary-open-color: hsl(220, 100%, 60%);
+  --ne-details-max-height: 100%;
+  --ne-details-icon: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" fill="currentColor"/></svg>');
+  --ne-details-icon-size: 0.75rem;
+  --ne-details-border-radius: 10px;
+  --ne-details-summary-padding: 1rem;
+  --ne-details-summary-position: sticky;
+  --ne-dialog-border: 0;
+  --ne-dialog-background: hsl(0, 0%, 100%);
+  --ne-dialog-border-radius: 5px;
+  --ne-dialog-y-padding: 2rem;
+  --ne-dialog-x-padding: 2rem;
+  --ne-dialog-shadow: 0 19px 38px 0 rgba(0, 0, 0, 0.16);
+  --ne-dialog-max-width: 40rem;
+  --ne-dialog-backdrop-color: rgba(0, 0, 0, 0.3);
+  --ne-hr-background: hsl(233, 34%, 92%);
+  --ne-hr-height: 2px;
+  --ne-hr-y-margin: 50px;
+  --ne-meter-border-width: 1px;
+  --ne-meter-border-color: transparent;
+  --ne-meter-background: hsl(233, 34%, 92%);
+  --ne-meter-border-radius: 5px;
+  --ne-meter-height: 8px;
+  --ne-meter-strong-color: hsl(148, 78%, 52%);
+  --ne-meter-good-color: hsl(41, 100%, 60%);
+  --ne-meter-weak-color: hsl(354, 100%, 65%);
+  --ne-progress-shadow: none;
+  --ne-progress-background: hsl(233, 34%, 92%);
+  --ne-progress-filled-color: hsl(220, 100%, 60%);
+  --ne-progress-height: 1rem;
+  --ne-progress-border-radius: 1rem;
+  --ne-range-background: hsl(235, 25%, 90%);
+  --ne-range-disabled-background: hsl(222, 40%, 92%);
+  --ne-range-progress-color: hsl(221, 100%, 73%);
+  --ne-range-disabled-progress-color: hsl(235, 100%, 98%);
+  --ne-range-active-progress-color: hsl(0, 0%, 100%);
+  --ne-range-thumb-background: hsl(220, 100%, 60%);
+  --ne-range-thumb-active-background: hsl(220, 100%, 60%);
+  --ne-range-thumb-disabled-background: hsl(232, 36%, 87%);
+  --ne-range-thumb-width: 24px;
+  --ne-range-thumb-height: 24px;
+  --ne-range-thumb-radius: 100%;
+  --ne-range-width: 100%;
+  --ne-range-height: 24px;
+  --ne-range-border-radius: 24px;
+  --ne-select-border: 2px solid hsl(213, 26%, 92%);
+  --ne-select-hover-border: 2px solid hsl(220, 82%, 64%);
+  --ne-select-focus-border: 2px solid hsl(220, 100%, 50%);
+  --ne-select-disabled-border: 2px solid hsl(240, 15%, 91%);
+  --ne-select-background: hsl(0, 0%, 100%);
+  --ne-select-hover-background: hsl(0, 0%, 100%);
+  --ne-select-focus-background: hsl(0, 0%, 100%);
+  --ne-select-disabled-background: hsl(235, 100%, 98%);
+  --ne-select-option-checked-background: hsl(220, 100%, 60%);
+  --ne-select-foreground: hsl(0, 0%, 13%);
+  --ne-select-hover-foreground: hsl(0, 0%, 13%);
+  --ne-select-focus-foreground: hsl(0, 0%, 13%);
+  --ne-select-disabled-foreground: hsl(233, 14%, 72%);
+  --ne-select-option-checked-foreground: hsl(0, 0%, 100%);
+  --ne-select-border-radius: 10px;
+  --ne-select-width: 100%;
+  --ne-select-padding: 0.5em;
+  --ne-select-icon: ;
+  --ne-select-icon-size: 1.5rem;
+  --ne-table-background: transparent;
+  --ne-table-head-separator: 2px solid hsl(213, 26%, 92%);
+  --ne-table-row-separator: 1px solid hsl(213, 26%, 92%);
+  --ne-table-striped-background: transparent;
+  --ne-table-cells-y-padding: 1rem;
+  --ne-table-cells-x-padding: 1rem;
+  --ne-textfield-border: 2px solid hsl(213, 26%, 92%);
+  --ne-textfield-hover-border: 2px solid hsl(213, 26%, 92%);
+  --ne-textfield-focus-border: 2px solid hsl(220, 100%, 50%);
+  --ne-textfield-disabled-border: 2px solid hsl(235, 100%, 98%);
+  --ne-textfield-readonly-border: 2px dashed hsl(213, 26%, 92%);
+  --ne-textfield-readonly-focus-border: 2px dashed hsl(220, 100%, 50%);
+  --ne-textfield-invalid-border-color: hsl(354, 100%, 65%);
+  --ne-textfield-background: hsl(0, 0%, 100%);
+  --ne-textfield-hover-background: hsl(0, 0%, 100%);
+  --ne-textfield-focus-background: hsl(0, 0%, 100%);
+  --ne-textfield-disabled-background: hsl(235, 100%, 98%);
+  --ne-textfield-invalid-background: hsl(0, 0%, 100%);
+  --ne-textfield-foreground: inherit;
+  --ne-textfield-hover-foreground: inherit;
+  --ne-textfield-focus-foreground: inherit;
+  --ne-textfield-disabled-foreground: hsl(233, 24%, 72%);
+  --ne-textfield-readonly-foreground: inherit;
+  --ne-textfield-invalid-foreground: inherit;
+  --ne-textfield-placeholder-foreground: hsl(233, 24%, 72%);
+  --ne-textfield-hover-placeholder-foreground: hsl(233, 24%, 72%);
+  --ne-textfield-focus-placeholder-foreground: hsl(233, 24%, 72%);
+  --ne-textfield-disabled-placeholder-foreground: hsl(233, 34%, 80%);
+  --ne-textfield-border-radius: 10px;
+  --ne-textfield-width: 100%;
+  --ne-textfield-min-height: 48px;
+  --ne-textfield-y-padding: 0.5em;
+  --ne-textfield-x-padding: 1em;
+  --ne-textfield-selection-background: hsl(233, 64%, 90%);
+  --ne-textfield-selection-foreground: hsl(0, 0%, 13%);
+  --ne-textfield-resize-direction: vertical;
+  --ne-textfield-font-weight: 700;
+}
+
 body:not(.fa),
 h1, h2, h3, h4, h5, h6 {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  width: inherit !important;
 }
 
 .max {
@@ -23,4 +211,148 @@ html.preview-text .app,
 html.preview-text pre,
 html.preview-text code.hljs {
   height: 100%;
+}
+
+html.preview li > input[type="checkbox"],
+html.preview li > input[type="radio"] /* No necessary */ {
+  margin-right: 0.5em;
+}
+
+/*
+ * 404 gist
+ */
+html.is404 body {
+  font-family: Consolas, "Courier new", Arial, sans-serif;
+  background: #050c14;
+  line-height: 1.5em;
+  cursor: default;
+  font-size: 18px;
+  color: #d3d7de;
+  padding: 5px
+}
+
+html.is404 .code-area {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  margin: 20px auto;
+  min-width: 320px;
+  width: 320px;
+  left: 50%;
+  top: 50%
+}
+
+html.is404 .code-area > span {
+  display: block
+}
+
+@media screen and (max-width:320px) {
+  html.is404 .code-area {
+    width: 95%;
+    margin: auto;
+    padding: 5px 5px 5px 10px;
+    font-size: 5vw;
+    min-width: auto;
+    line-height: 6.5vw
+  }
+}
+
+html.is404 .home {
+  outline: 0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  overflow: hidden;
+  padding: 6px 16px;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none !important;
+  background-color: #050c14;
+  border: 1px solid #444;
+  -webkit-transition: background-color .3s, color .15s, box-shadow .3s, opacity .3s, filter .3s;
+  -webkit-transition: background-color .3s, color .15s, opacity .3s, -webkit-box-shadow .3s, -webkit-filter .3s;
+  transition: background-color .3s, color .15s, opacity .3s, -webkit-box-shadow .3s, -webkit-filter .3s;
+  transition: background-color .3s, color .15s, box-shadow .3s, opacity .3s, filter .3s;
+  transition: background-color .3s, color .15s, box-shadow .3s, opacity .3s, filter .3s, -webkit-box-shadow .3s, -webkit-filter .3s
+}
+
+/*
+ * Markdown
+ */
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #24292e;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  padding: 16px 12px;
+}
+
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+  margin: 16px 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body code {
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
+  border: 0;
+}
+
+.markdown-body blockquote {
+  padding: 5px 10px;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote p {
+  margin: 0;
+}
+
+.markdown-body blockquote > blockquote {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.markdown-body details {
+  overflow: hidden;
+}
+.markdown-body details summary {
+  margin: 3px -12px 8px -12px;
+  position: relative;
 }

@@ -2,4 +2,10 @@
 
 # [JdBEdit Preview](https://preview.codewith.wetrafa.xyz)
 
-JdBEdit Preview est une partie de JdBEdit qui permet de lire les fichiers sauvegardés sur Gist GitHub (via JdBEdit ou pas).
+JdBEdit Preview est une partie de JdBEdit qui permet de lire les fichiers
+sauvegardés sur Gist GitHub (via JdBEdit ou pas).
+
+## Paramètres supprimés
+
+- `style_md` parce que le markdown est desormais stylé par défaut.
+- `exec` entièrement remplacé par `render`.

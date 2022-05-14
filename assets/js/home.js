@@ -7,7 +7,7 @@ $(document).ready(function(){
   /**
    * Extract gist id from the given URL.
    * @private
-   * @param {string} str URL
+   * @param {string} str URL to extract gist id from.
    * @returns {string} Gist id
    */
   function getGistId (str) {
@@ -45,7 +45,6 @@ $(document).ready(function(){
   /**
    * Add user settings in the URL.
    * @private
-   * @returns {void}
    */
   function setUserChoicesInUrl() {
     let $input = $("#update-id-input");
@@ -61,13 +60,9 @@ $(document).ready(function(){
     }
 
     const gistId = getGistId(val);
-    const style_md = $("#setting-style-markdown").prop("checked");
-    const render_md = $("#setting-render-markdown").prop("checked");
     const render_all = $("#setting-preview-type").val();
     const theme = $("#setting-theme").val();
     const newURL_path = "/?id=" + gistId +
-      (style_md ? "&style_md=true" : "") +
-      (render_md ? "&exec=true" : "") +
       (render_all === "render" ? "" : "&render=false") +
       (theme !== "" ? ("&theme=" + theme) : "");
 
@@ -83,7 +78,6 @@ $(document).ready(function(){
    * Show the given error message.
    * @private
    * @param {string} [msg] Error message
-   * @returns {void}
    */
   function showError(msg) {
     if (!msg) msg = "Veuillez fournir un ID de fichier valide.";
@@ -97,7 +91,6 @@ $(document).ready(function(){
   /**
    * Load Google Ads.
    * @private
-   * @returns {void}
    */
   function loadADS() {
     $.ajax({
@@ -167,20 +160,6 @@ $(document).ready(function(){
 
     if (!errorTimeout && $("#jdb-error-msg").is(":visible")) {
       $("#jdb-error-msg").slideUp();
-    }
-  });
-
-  $("#setting-render-markdown").change(function(){
-    if ($(this).is(":checked")) {
-      $("#setting-style-markdown").attr("disabled", false);
-      $("#setting-theme").val("").attr("disabled", true);
-    } else {
-      $("#setting-style-markdown").attr("disabled", true);
-      $("#setting-theme").attr("disabled", false);
-      if ($("#setting-style-markdown").is(":checked")) {
-        $("#setting-style-markdown").prop("checked", false);
-        $("#setting-theme").val("");
-      }
     }
   });
 
