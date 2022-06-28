@@ -23,9 +23,8 @@ $(document).ready(function(){
       str = str.split("/")[4];
     } else if (str.indexOf("//code." + wetrafa_domaine + "/preview/") > -1) {
       str = str.split("/")[4];
-    } else if (str.indexOf("//code." + wetrafa_domaine + "/") > -1) {
-      str = jdb.getUrlParam("gistId", str) || jdb.getUrlParam("template", str);
     } else if (
+      str.indexOf("//code." + wetrafa_domaine + "/") > -1 ||
       str.indexOf("//codewith." + wetrafa_domaine + "/") > -1 ||
       str.indexOf("//www.code." + wetrafa_domaine + "/") > -1 ||
       str.indexOf("//jdbedit.netlify.com/") > -1

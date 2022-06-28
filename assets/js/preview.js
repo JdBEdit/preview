@@ -95,7 +95,7 @@ $(document).ready(function(){
     });
 
     $(".app > ul").each((i, el) => {
-      $(el).addClass("jdb-ul", "jdb-hoverable");
+      $(el).addClass("jdb-ul jdb-hoverable");
     });
 
     $(".app > ol").each((i, el) => {
