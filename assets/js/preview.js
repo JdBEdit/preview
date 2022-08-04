@@ -69,6 +69,11 @@ $(document).ready(function(){
     }).attr({
       width: "100%",
       height: "100%"
+    }).on("load", () => {
+      const $el = $("#iframeResult").contents().find(window.location.hash);
+      if ($el.length > 0) {
+        $("#iframeResult").contents().scrollTop($el.offset().top);
+      }
     });
 
     $(".app").css({
@@ -166,6 +171,13 @@ $(document).ready(function(){
               href: "/assets/css/native-elements-style.css"
             })
           ).next("body").find(".app").addClass("markdown-body");
+
+          if (window.location.hash) {
+            setTimeout(() => {
+              const $el = $(window.location.hash);
+              if ($el.length > 0) $("html, body").scrollTop($el.offset().top);
+            }, 100);
+          }
         });
       } else {
         renderRawPreview(data.content, lang);
