@@ -138,7 +138,13 @@ $(document).ready(function(){
       ).append( $("<meta>", { content: data.description, itemprop: "description"})
       ).append( $("<meta>", { content: data.description, property: "og:description" })
       ).append( $("<meta>", { content: window.location.href, property: "og:url" })
-      ).find("title").text(data.filename.split(".")?.shift() + " - JdBEdit Preview");
+      ).find("title").text(() => {
+        let fileName = data.filename;
+        if (!fileName.match(/^\./)) {
+          fileName = fileName.split(".")?.shift();
+        }
+        return `${fileName} - JdBEdit Preview`;
+      });
 
       if ((lang === "html" || lang === "svg") && renderCode !== "false") {
         $("html").css("overflow", "hidden");
