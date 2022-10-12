@@ -21,16 +21,16 @@ $(document).ready(function(){
       //! Remove rawgit support on the end of 2022.
     ) {
       str = str.split("/")[4];
-    } else if (str.indexOf("//code." + wetrafa_domaine + "/preview/") > -1) {
+    } else if (str.indexOf(`//code.${wetrafa_domaine}/preview/`) > -1) {
       str = str.split("/")[4];
     } else if (
-      str.indexOf("//code." + wetrafa_domaine + "/") > -1 ||
-      str.indexOf("//codewith." + wetrafa_domaine + "/") > -1 ||
-      str.indexOf("//www.code." + wetrafa_domaine + "/") > -1 ||
+      str.indexOf(`//code.${wetrafa_domaine}/`) > -1 ||
+      str.indexOf(`//codewith.${wetrafa_domaine}/`) > -1 ||
+      str.indexOf(`//www.code.${wetrafa_domaine}/`) > -1 ||
       str.indexOf("//jdbedit.netlify.com/") > -1
     ) {
       str = jdb.getUrlParam("gistId", str) || jdb.getUrlParam("template", str);
-    } else if (str.indexOf("//preview.codewith." + wetrafa_domaine + "/") > -1) {
+    } else if (str.indexOf(`//preview.codewith.${wetrafa_domaine}/`) > -1) {
       if (str.indexOf("/file/") > -1) {
         str = str.split("/")[4];
       } else if (str.indexOf("id=") > -1) {

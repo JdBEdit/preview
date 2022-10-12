@@ -14,7 +14,7 @@ $(document).ready(function(){
     const hljs_version = "11.5.1"; // 10.3.1
     const hljs_name = "highlight";
     let hljs_user_theme = (jdb.getUrlParam("theme") || "").toLowerCase();
-    const path = "//cdnjs.cloudflare.com/ajax/libs/" + hljs_name + ".js/";
+    const path = `//cdnjs.cloudflare.com/ajax/libs/${hljs_name}.js/`;
     let hljs_themes = hljs_all_themes.dark.concat(hljs_all_themes.light);
 
     if (hljs_user_theme !== null) {
@@ -42,10 +42,10 @@ $(document).ready(function(){
 
     $("<link>", {
       type: "text/css", rel: "stylesheet",
-      href: path + hljs_version + "/styles/" + hljs_user_theme + ".min.css"
+      href: `${path + hljs_version}/styles/${hljs_user_theme}.min.css`
     }).appendTo("head");
 
-    $.getScript(path + hljs_version + "/" + hljs_name + ".min.js").done(() => {
+    $.getScript(`${path + hljs_version}/${hljs_name}.min.js`).done(() => {
       if (callback) callback();
     });
   }
