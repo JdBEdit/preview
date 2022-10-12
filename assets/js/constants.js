@@ -1,4 +1,4 @@
-let hljs_all_themes = {
+const hljs_all_themes = {
   dark: [
     "Atom One Dark", "Agate", "An Old Hope", "Androidstudio", "Dracula",
     "Github Dark", "Github Dark Dimmed", "Gradient Dark", "Marrakesh",
@@ -14,3 +14,5 @@ let hljs_all_themes = {
     "tomorrow", "zenburn"
   ]
 };
+
+export default hljs_all_themes;

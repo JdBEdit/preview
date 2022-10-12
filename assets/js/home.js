@@ -1,4 +1,7 @@
 /*! Copyright 2017 - 2021 JdBEdit. All rights reserved. */
+import hljs_all_themes from "/assets/js/constants.js";
+import locInstance from "/assets/js/locales/index.js";
+import showError from "/assets/js/utils.js";
 
 $(document).ready(function(){
   const wetrafa_domaine = "wetrafa.xyz";
@@ -73,62 +76,8 @@ $(document).ready(function(){
     }
   }
 
-  /**
-   * Show the given error message.
-   * @private
-   * @param {string} [msg] Error message
-   */
-  function showError(msg) {
-    if (!msg) msg = "Veuillez fournir un ID de fichier valide.";
-    $("#jdb-error-msg").text(msg).slideDown();
-    errorTimeout = setTimeout(() => {
-      clearTimeout(errorTimeout);
-      errorTimeout = null;
-    }, 5000);
-  }
-
-  /**
-   * Load Google Ads.
-   * @private
-   */
-  function loadADS() {
-    $.ajax({
-      async: true, method: "GET", dataType: "script",
-      url: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    }).done(function(){
-      setTimeout(function(){
-        $(".app").append(
-          $("<hr>").addClass("jdb-hr")
-        ).append(function(){
-          return $("<div>", {
-            class: "jdb-padding-sm",
-            id: "jdb-gad",
-          }).append(
-            $("<ins>", {
-              class: "adsbygoogle",
-              "data-ad-format": "auto",
-              "data-ad-slot": "1840197803",
-              "data-full-width-responsive": "true",
-              "data-ad-client": "ca-pub-9293032318237031"
-            }).css({
-              height: "90px",
-              display: "block",
-              // width: "234px",
-            })
-          );
-        });
-
-        if (typeof adsbygoogle.requestNonPersonalizedAds === "undefined") {
-          adsbygoogle.requestNonPersonalizedAds = 1;
-        }
-        // Push an advertissement.
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }, 1000);
-    });
-  }
-
-  let themeOptGroup = `<optgroup id="dark-theme" label="Thèmes sombres">`;
-  themeOptGroup += `<option value="" selected>Sélectionner un thème</option>`;
+  let themeOptGroup = `<optgroup id="dark-theme" label="${locInstance.t("darkThemes")}">`;
+  themeOptGroup += `<option value="" selected data-si18n="selectTheme">${locInstance.t("selectTheme")}</option>`;
   for (let i = 0; i < hljs_all_themes.dark.length; i++) {
     themeOptGroup += `<option value="${hljs_all_themes.dark[i].replace(/\s/g, "-").toLowerCase()}">
       ${hljs_all_themes.dark[i]}</option>`;
@@ -136,7 +85,7 @@ $(document).ready(function(){
   themeOptGroup += `</optgroup>`;
   $("#setting-theme").append(themeOptGroup);
 
-  themeOptGroup = `<optgroup id="light-theme" label="Thèmes clairs">`;
+  themeOptGroup = `<optgroup id="light-theme" label="${locInstance.t("lightThemes")}">`;
   for (let i = 0; i < hljs_all_themes.light.length; i++) {
     themeOptGroup += `<option value="${hljs_all_themes.light[i].replace(/\s/g, "-").toLowerCase()}">
       ${hljs_all_themes.light[i]}</option>`;

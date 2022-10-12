@@ -1,4 +1,5 @@
 /*! Copyright 2017 - 2021 JdBEdit. All rights reserved. */
+import hljs_all_themes from "/assets/js/constants.js";
 
 $(document).ready(function(){
   const gistId = jdb.getUrlParam("id");
@@ -115,7 +116,7 @@ $(document).ready(function(){
    */
   function getGist (gistId) {
     $.ajax({
-      url: "https:\/\/api.github.com\/gists\/" + gistId,
+      url: `https:\/\/api.github.com\/gists\/${gistId}`,
       type: "GET",
       statusCode: {
         404: () => {

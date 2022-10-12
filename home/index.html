@@ -18,12 +18,13 @@
   <link rel="dns-prefetch" href="https://s3.amazonaws.com"/>
   <link rel="dns-prefetch" href="https://code.wetrafa.xyz"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link rel="alternate" hreflang="fr" href="https://preview.codewith.wetrafa.xyz/home?hl=fr"/>
+  <link rel="alternate" hreflang="en" href="https://preview.codewith.wetrafa.xyz/home?hl=en"/>
+  <meta name="description" content=""/>
   <link href="https://code.wetrafa.xyz/lib/img/icons/favicon.ico" type="image/ico" rel="icon"/>
   <meta itemprop="image" content="https://code.wetrafa.xyz/lib/img/logo/banner-preview.png"/>
   <meta property="og:image" content="https://code.wetrafa.xyz/lib/img/logo/banner-preview.png"/>
   <meta name="twitter:image" content="https://code.wetrafa.xyz/lib/img/logo/banner-preview.png"/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="googlebot" content="index, follow"/>
   <link rel="canonical" href="https://preview.codewith.wetrafa.xyz/"/>
   <link rel="stylesheet" href="https://css.bruxelles.dev/jdb?v=1.1.0&c=all"/>
   <link rel="stylesheet" href="https://code.wetrafa.xyz/lib/css/fonts/font-family.css"/>
@@ -40,14 +41,26 @@
           <i class="fa fa-fw fa-code" aria-hidden="true"></i> <i>Try it ! </i>
         </a>
         <a href="https://code.wetrafa.xyz/a-propos" class="jdb-bar-item jdb-button">
-          <i class="fa fa-fw fa-info-circle jdb-text-gray" aria-hidden="true"></i> A propos
+          <i class="fa fa-fw fa-info-circle jdb-text-gray" aria-hidden="true"></i>
+          <span data-si18n="links.about"></span>
         </a>
         <a href="https://status.code.wetrafa.xyz" class="jdb-bar-item jdb-button">
-          <i class="fa fa-fw fa-life-ring jdb-text-pink" aria-hidden="true"></i> Status
+          <i class="fa fa-fw fa-life-ring jdb-text-pink" aria-hidden="true"></i>
+          <span data-si18n="links.status"></span>
         </a>
         <a href="https://docs.code.wetrafa.xyz/preview" class="jdb-bar-item jdb-button">
-          <i class="fa fa-fw fa-book jdb-text-teal" aria-hidden="true"></i> Documentation
+          <i class="fa fa-fw fa-book jdb-text-teal" aria-hidden="true"></i>
+          <span data-si18n="links.doc"></span>
         </a>
+        <div class="jdb-dropdown-hover jdb-rights">
+          <button class="jdb-button">
+            <i class="fa fa-language" aria-hidden="true"></i>
+          </button>
+          <div class="jdb-dropdown-content jdb-bar-block jdb-card-8 jdb-round jdb-padding-8 jdb-md i18n-togglers" style="min-width:auto">
+            <a data-lang="fr" class="jdb-bar-item jdb-button" title="Français">Fr</a>
+            <a data-lang="en" class="jdb-bar-item jdb-button" title="English">En</a>
+          </div>
+        </div>
       </div>
       <div class="jdb-dropdown-hover jdb-right jdb-hide-lg">
         <button class="jdb-dropdown-btn jdb-button" tabindex="0">
@@ -55,17 +68,30 @@
         </button>
         <div class="jdb-dropdown-content jdb-bar-block jdb-card-8 jdb-round jdb-padding-8" style="margin-left:-143px; top:48px">
           <a href="https://code.wetrafa.xyz" class="jdb-bar-item jdb-button">
-            <i class="fa fa-fw fa-code" aria-hidden="true"></i> Éditeur
+            <i class="fa fa-fw fa-code" aria-hidden="true"></i>
+            <span data-si18n="links.editor"></span>
           </a>
           <a href="https://code.wetrafa.xyz/a-propos" class="jdb-bar-item jdb-button">
-            <i class="fa fa-fw fa-info-circle jdb-text-gray" aria-hidden="true"></i> A propos
+            <i class="fa fa-fw fa-info-circle jdb-text-gray" aria-hidden="true"></i>
+            <span data-si18n="links.about"></span>
           </a>
           <a href="https://status.code.wetrafa.xyz" class="jdb-bar-item jdb-button">
-            <i class="fa fa-fw fa-life-ring jdb-text-pink" aria-hidden="true"></i> Status
+            <i class="fa fa-fw fa-life-ring jdb-text-pink" aria-hidden="true"></i>
+            <span data-si18n="links.status"></span>
           </a>
           <a href="https://docs.code.wetrafa.xyz/preview" class="jdb-bar-item jdb-button">
-            <i class="fa fa-fw fa-book jdb-text-teal" aria-hidden="true"></i> Documentation
+            <i class="fa fa-fw fa-book jdb-text-teal" aria-hidden="true"></i>
+            <span data-si18n="links.doc"></span>
           </a>
+        </div>
+      </div>
+      <div class="jdb-dropdown-hover jdb-right jdb-hide-lg">
+        <button class="jdb-button">
+          <i class="fa fa-language" aria-hidden="true"></i>
+        </button>
+        <div class="jdb-dropdown-content jdb-bar-block jdb-card-8 jdb-round jdb-padding-8 jdb-md i18n-togglers" style="right:55px; top:48px; min-width:auto">
+          <a data-lang="fr" class="jdb-bar-item jdb-button" title="Français">Fr</a>
+          <a data-lang="en" class="jdb-bar-item jdb-button" title="English">En</a>
         </div>
       </div>
     </nav>
@@ -73,13 +99,11 @@
   <div class="app max jdb-container jdb-padding-16">
     <div class="jdb-row">
       <div class="jdb-col s12 m8 l9">
-        <div class="jdb-xxlarge jdb-text-shadow-white">
-          Ouvrir un fichier Gist GitHub
-        </div>
+        <div class="jdb-xxlarge jdb-text-shadow-white" data-si18n="heading1"></div>
         <div class="jdb-panel jdb-light-gray jdb-round">
-          <p><strong>JdBEdit Preview</strong> permet de lire tout fichier sauvegardé sur <a href="https://gist.github.com" target="_blank" rel="noopener noreferrer">Gist GitHub</a> via <a href="https://code.wetrafa.xyz" target="_blank">JdBEdit</a>.</p>
+          <p id="site-description"></p>
         </div>
-        <p class="jdb-large">Veuillez insérer l'identifiant du fichier Gist ou l'adresse du lien du fichier sur JdBEdit ou Gist GitHub dans le champ ci-dessous :</p>
+        <p class="jdb-large" data-si18n="gistInput.label"></p>
       </div>
       <div class="jdb-col m4 l3 jdb-hide-sm jdb-padding jdb-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 627.45 759" style="width:auto; max-height: 200px">
@@ -111,28 +135,29 @@
       </div>
     </div>
     <div class="jdb-input-group jdb-margin-0">
-      <input class="jdb-input jdb-animate-input jdb-focusable jdb-border jdb-round jdb-text-red-gray" id="update-id-input"
-        type="text" placeholder="Identifiant du fichier ou URL (obligatoire)" spellcheck="false" required style="width:70%">
+      <input class="jdb-input jdb-animate-input jdb-focusable jdb-border
+        jdb-round jdb-text-red-gray" id="update-id-input" type="text" required
+        spellcheck="false" style="width:70%">
       <div class="jdb-text-red jdb-padding-small jdb-bold jdb-monospace" id="jdb-error-msg" style="display:none"></div>
       <details class="jdb-section" id="advanced-settings" open>
-        <summary class="jdb-focusable jdb-round jdb-pointer jdb-padding-left">Paramètres avancés</summary>
+        <summary class="jdb-focusable jdb-round jdb-pointer jdb-padding-left" data-si18n="advancedSettings"></summary>
         <div id="render-markdown-container" class="jdb-margin-top jdb-light-gray jdb-round jdb-padding">
           <div class="jdb-margin-8">
-            <label class="jdb-show-block jdb-margin-8" for="setting-preview-type">Type d'aperçu</label>
+            <label class="jdb-show-block jdb-margin-8" for="setting-preview-type" data-si18n="previewType.title"></label>
             <select class="jdb-select jdb-focusable jdb-border jdb-round" name="setting-preview-type" id="setting-preview-type">
-              <option value="render" selected>Code rendu (HTML, SVG et Markdown uniquement)</option>
-              <option value="plain">Texte brut</option>
+              <option value="render" selected data-si18n="previewType.render"></option>
+              <option value="plain" data-si18n="previewType.plain"></option>
             </select>
             <div class="jdb-panel jdb-dark-gray jdb-round-md">
-              <p><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
-                Le markdown est rendu HTML et stylé par défaut. Pour garder le code en markdown, sélectionnez le type d'aperçu "Texte brut" ci-dessus.</p>
+              <p>
+                <i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
+                <span data-si18n="markdownInfo"></span>
+              </p>
               </p>
             </div>
           </div>
           <div class="jdb-margin-8">
-            <label class="jdb-show-block jdb-margin-8" for="setting-theme">
-              Thème du code <i class="jdb-text-gray">(s'applique si le fichier n'est pas en HTML)</i>
-            </label>
+            <label class="jdb-show-block jdb-margin-8" for="setting-theme" data-si18n="themesLabel" data-si18n-html="true"></label>
             <select class="jdb-select jdb-focusable jdb-border jdb-round" name="setting-theme" id="setting-theme">
             </select>
           </div>
@@ -140,12 +165,12 @@
       </details>
     </div>
     <button class="jdb-btn jdb-mobile jdb-blue-gray jdb-hover-dark-gray jdb-monospace jdb-border-bottom jdb-border-w2 jdb-round" id="update-id-btn">
-      Ouvrir le fichier <i class="fa fa-angle-right" aria-hidden="true"></i>
+      <span data-si18n="buttons.open"></span>
+      <i class="fa fa-fw fa-angle-right" aria-hidden="true"></i>
     </button>
   </div>
   <script src="/assets/js/jquery.min.js"></script>
   <script src="https://s3.amazonaws.com/cdn.io/datas/lib/jdb/js/1.24.1/jdb.min.js"></script>
-  <script src="/assets/js/constants.js"></script>
-  <script src="/assets/js/home.js"></script>
+  <script type="module" src="/assets/js/home.js"></script>
 </body>
 </html>
