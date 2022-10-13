@@ -1,0 +1,28 @@
+{
+  "links": {
+    "about": "Over",
+    "status": "Status",
+    "doc": "Documentatie",
+    "editor": "Editor"
+  },
+  "buttons": {
+    "open": "Bestand openen"
+  },
+  "advancedSettings": "Geavanceerde instellingen",
+  "previewType": {
+    "title": "Voorbeeldtype",
+    "render": "Gerenderde code (alleen HTML, SVG en Markdown)",
+    "plain": "Platte tekst"
+  },
+  "gistInput": {
+    "placeholder": "Bestands-ID of URL (vereist)",
+    "label": "Voer de Gist-bestands-ID of de bestandslink in op JdBEdit of Gist GitHub in het onderstaande veld:"
+  },
+  "lightThemes": "Lichte thema's",
+  "darkThemes": "Donkere thema's",
+  "selectTheme": "Thema selecteren",
+  "themesLabel": "Codethema <i class=\"jdb-text-gray\">(van toepassing als het bestand geen HTML is)</i>",
+  "heading1": "Open een Gist GitHub bestand",
+  "description": "%{appName} maakt het mogelijk om elk bestand dat is opgeslagen op %{gistURL} via %{appURL} af te spelen.",
+  "markdownInfo": "Markdown wordt standaard in HTML weergegeven en opgemaakt. Om de code in de Markdown te houden, selecteert u hierboven het voorbeeldtype 'Platte tekst'."
+}
