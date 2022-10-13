@@ -21,3 +21,11 @@ d'autres options.
 
 - `style_md` parce que le markdown est desormais stylé par défaut.
 - `exec` entièrement remplacé par `render`.
+
+## Traduction
+
+Vous pouvez aider à traduire l'application en utilisant [Crowdin](https://crwd.in/jdbedit-preview).
+
+Toutes les traductions sont stockées dans le répertoire `/locales`. Vous ne
+en aucun cas éditer les fichiers de ce répertoire, si ce n'est les fichiers
+`index.js` et `fr.json` qui est la langue source pour les traductions.
