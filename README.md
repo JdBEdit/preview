@@ -16,6 +16,8 @@ d'autres options.
 - `/file/[ID]`: Similaire au point juste au dessus, mais sans paramètre URL.
   Ce chemin renvoie d'ailleurs vers la chemin du point juste au dessus.
 - `/edit?id=[ID]`: Redirige vers l'éditeur JdBEdit avec l'id actuel.
+- `/[LANG]/home` ou `/home?hl=[LANG]`: Page d'accueil à la langue du code
+  `[LANG]` (ex: `fr`, `en`).
 
 ## Paramètres supprimés
 

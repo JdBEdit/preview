@@ -23,6 +23,13 @@
   status = 301
   force = true
 
+# Locale redirection for the home page.
+[[redirects]]
+  from = "/:lang/home"
+  to = "/home?hl=:lang"
+  status = 301
+  force = true
+
 ###########################
 # OTHER REDIRECTIONS
 ###########################
