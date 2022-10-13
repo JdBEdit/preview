@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c9708338-c41b-47bd-85d7-c60e7ec86516/deploy-status)](https://app.netlify.com/sites/jdbedit-preview/deploys)
+[![Crowdin](https://badges.crowdin.net/jdbedit-preview/localized.svg)](https://crowdin.com/project/jdbedit-preview)
 
 # [JdBEdit Preview](https://preview.codewith.wetrafa.xyz)
 
