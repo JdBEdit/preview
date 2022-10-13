@@ -24,5 +24,5 @@
   "themesLabel": "Code theme <i class=\"jdb-text-gray\">(applies if the file is not in HTML)</i>",
   "heading1": "Open a Gist GitHub file",
   "description": "%{appName} allows to read any file saved on %{gistURL} via %{appURL}.",
-  "markdownInfo": "The markdown is rendered as HTML and styled by default. To preserve the markdown code, select the \"Plain Text\" preview type above."
+  "markdownInfo": "The markdown is rendered as HTML and styled by default. To preserve the Markdown code, select the \"Plain Text\" preview type above."
 }
