@@ -1,0 +1,28 @@
+{
+  "links": {
+    "about": "A propos",
+    "status": "Status",
+    "doc": "Documentation",
+    "editor": "Éditeur"
+  },
+  "buttons": {
+    "open": "Ouvrir le fichier"
+  },
+  "advancedSettings": "Paramètres avancés",
+  "previewType": {
+    "title": "Type d'aperçu",
+    "render": "Code rendu (HTML, SVG et Markdown uniquement)",
+    "plain": "Texte brut"
+  },
+  "gistInput": {
+    "placeholder": "Identifiant du fichier ou URL (obligatoire)",
+    "label": "Veuillez insérer l'identifiant du fichier Gist ou le lien du fichier sur JdBEdit ou Gist GitHub dans le champ ci-dessous :"
+  },
+  "lightThemes": "Thèmes clairs",
+  "darkThemes": "Thèmes sombres",
+  "selectTheme": "Sélectionner un thème",
+  "themesLabel": "Thème du code <i class=\"jdb-text-gray\">(s'applique si le fichier n'est pas en HTML)</i>",
+  "heading1": "Ouvrir un fichier Gist GitHub",
+  "description": "%{appName} permet de lire tout fichier sauvegardé sur %{gistURL} via %{appURL}.",
+  "markdownInfo": "Le markdown est rendu HTML et stylé par défaut. Pour garder le code en markdown, sélectionnez le type d'aperçu \"Texte brut\" ci-dessus."
+}
