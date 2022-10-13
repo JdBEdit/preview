@@ -1,6 +1,6 @@
 /*! Copyright 2017 - 2021 JdBEdit. All rights reserved. */
 import hljs_all_themes from "/assets/js/constants.js";
-import locInstance from "/assets/js/locales/index.js";
+import locInstance from "/locales/index.js";
 import showError from "/assets/js/utils.js";
 
 $(document).ready(function(){

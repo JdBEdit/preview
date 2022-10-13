@@ -4,8 +4,8 @@ import getJSON, { updateUrlParam } from "/assets/js/utils.js"
 const locInstance = new Si18n();
 const activeClass = "jdb-leftbar";
 const locales = {
-  fr: await getJSON("/assets/js/locales/fr.json"),
-  en: await getJSON("/assets/js/locales/en.json")
+  fr: await getJSON(" /locales/fr.json"),
+  en: await getJSON(" /locales/en.json")
 };
 
 locInstance.init({
