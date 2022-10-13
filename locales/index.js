@@ -3,10 +3,26 @@ import getJSON, { updateUrlParam } from "/assets/js/utils.js"
 
 const locInstance = new Si18n();
 const activeClass = "jdb-leftbar";
-const locales = {
-  fr: await getJSON(" /locales/fr.json"),
-  en: await getJSON(" /locales/en.json")
-};
+const langCodes = {
+  "fr": "Français",
+  "en": "English",
+  "nl": "Nederlands"
+}, locales = {};
+
+for (const code in langCodes) {
+  locales[code] = await getJSON(`/locales/${code}.json`);
+}
+
+$(".i18n-togglers").each(function(){
+  for (const code in langCodes) {
+    $(this).append($("<a>", {
+      "data-lang": code,
+      "class": "jdb-bar-item jdb-button",
+      "title": langCodes[code],
+      text: code
+    }));
+  }
+});
 
 locInstance.init({
   locales,
