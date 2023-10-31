@@ -1,4 +1,4 @@
-import Si18n from "https://cdn.jsdelivr.net/npm/si18n.js@1.2.0/si18n.min.js";
+import Si18n from "https://cdn.jsdelivr.net/npm/si18n.js@1.4.1/si18n.min.js";
 import getJSON, { updateUrlParam } from "/assets/js/utils.js"
 
 const locInstance = new Si18n();
